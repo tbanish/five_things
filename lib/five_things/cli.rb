@@ -1,0 +1,4 @@
+class FiveThings::CLI
+  
+  
+end
