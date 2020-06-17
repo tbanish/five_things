@@ -1,9 +1,9 @@
 class FiveThings::CLI
-  
   def call
     FiveThings::Scraper.new.scrape_articles
     greeting
-    list
+    menu
+    article_list
   end
   
   def greeting
@@ -11,42 +11,50 @@ class FiveThings::CLI
     Welcome to the Five Things app!
     
     Here you can find the top five news stories of the week
-    to help you stay informed in a fast effient way!
+    to help you stay informed in a fast efficient way!
     
     MESSAGE
   end
   
-  def list
-    puts <<~LIST
-    Please select an item form the list below:
+  def menu
+    puts "Please select an item from the list below (type 'e' to exit):"
+    puts ""
+    article_list
+  end
+  
+  def article_list
+    FiveThings::Article.all.each.with_index(1) do |article, i|
+      puts "#{i}. #{article.headline}"
+    end
     
-    1. Article 1
-    2. Article 2
-    3. Article 3
-    4. Article 4
-    5. Article 5
-    6. Exit
+    @list_input = gets.strip
     
-    LIST
-    
-    @user_input = gets.strip
-    
-    if (1..5).include?(@user_input.to_i)
-      show_article
-    elsif @user_input.to_i == 6
+    if @list_input.downcase == 'e'
       puts "See you next time!"
+      exit
+    elsif (1..5).include?(@list_input.to_i)
+      show_article
     else
       puts "I'm not sure what you meant ..."
-      list
+      menu
     end
+  end
+
+  def input_to_index(input)
+    input.to_i - 1
   end
   
   def show_article
-    puts "Headline"
     
-    puts "Body"
-    
-    puts "Word Count"
+    article = FiveThings::Article.find_by_index(input_to_index(@list_input))
+    puts "#{article.headline}"
+    puts ""
+    puts "#{article.word_count_message}"
+    puts ""
+    puts "#{article.body}"
+    puts ""
+    puts "#{article.source}"
+    puts ""
     
     option_message
   end
@@ -56,17 +64,16 @@ class FiveThings::CLI
     puts "1. See list of articles"
     puts "2. Exit"
     
-    @user_input = gets.strip
+    @option_input = gets.strip
     
-    if @user_input.to_i == 1
-      list
-    elsif @user_input.to_i == 2
+    if @option_input.to_i == 1
+      menu
+    elsif @option_input.to_i == 2
       puts "Come back again soon!"
+      exit
     else
       puts "I'm not quite sure what you mean ..."
       option_message
     end
   end
-
-  
 end
