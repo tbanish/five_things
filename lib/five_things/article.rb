@@ -7,6 +7,10 @@ class FiveThings::Article
     @@all << self
   end
   
+  def self.find_by_index(index)
+    self.all[index]
+  end
+  
   def self.all
     @@all
   end
@@ -16,7 +20,7 @@ class FiveThings::Article
   end
   
   def word_count_message
-    puts "Word Count: #{@words}"
+    puts "Word Count: #{self.word_count}"
   end
   
 end
