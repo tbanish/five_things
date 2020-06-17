@@ -20,7 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To run this app, type ./bin/five_things into the command from the local directory.
+
+You will be shown a welcome message followed by a list of 5 news headlines for you to choose from.  You will be given the option to either type 1-5 to select an article to read or to type 'e' to exit the program.
+
+Once you select a headline, you will be shown the full article.  After you are finished reading you will be given the option to either view the list of headlines again or to exit the program.
 
 ## Development
 
