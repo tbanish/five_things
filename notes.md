@@ -18,7 +18,7 @@ How the CLI should flow:
   
   What would you like to do next?
   
-  1. View article menue
+  1. View article menu
   2. Exit
 
 > 2
