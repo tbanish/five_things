@@ -1,8 +1,6 @@
 # FiveThings
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/five_things`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The FiveThings App will scrape articles from The Week website and provide the user with the top five news headlines of the week.  The user will be able to choose a headline from the list and read the associated story.
 
 ## Installation
 
