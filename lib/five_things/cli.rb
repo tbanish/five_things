@@ -1,6 +1,7 @@
 class FiveThings::CLI
   
   def call
+    FiveThings::Scraper.new.scrape_articles
     greeting
     list
   end
