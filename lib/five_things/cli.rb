@@ -41,7 +41,12 @@ class FiveThings::CLI
   end
   
   def show_article
-    puts "Article"
+    puts "Headline"
+    
+    puts "Body"
+    
+    puts "Word Count"
+    
     option_message
   end
   
