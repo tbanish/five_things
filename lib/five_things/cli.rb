@@ -47,13 +47,14 @@ class FiveThings::CLI
   def show_article
     
     article = FiveThings::Article.find_by_index(input_to_index(@list_input))
-    puts "#{article.headline}"
+    puts "** #{article.headline} **"
     puts ""
     puts "#{article.word_count_message}"
     puts ""
     puts "#{article.body}"
     puts ""
     puts "#{article.source}"
+    puts "------"
     puts ""
     
     option_message
