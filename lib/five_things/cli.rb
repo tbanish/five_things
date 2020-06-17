@@ -61,20 +61,19 @@ class FiveThings::CLI
   end
   
   def option_message
-    puts "What would you like to do next?"
-    puts "1. See list of articles"
-    puts "2. Exit"
-    
+    puts "Would you like to view the list of articles again? (y/n)"
+
     @option_input = gets.strip
     
-    if @option_input.to_i == 1
+    case @option_input.downcase
+    when 'y'
       menu
-    elsif @option_input.to_i == 2
+    when 'n'
       puts "Come back again soon!"
       exit
     else
-      puts "I'm not quite sure what you mean ..."
-      option_message
+      puts "I'm not sure what you meant..."
+    option_message
     end
   end
 end
