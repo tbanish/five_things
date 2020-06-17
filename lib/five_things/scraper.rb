@@ -6,9 +6,9 @@ class FiveThings::Scraper
     
     doc.search("div.five-things-item").each do |a|
       article = FiveThings::Article.new
-      article.headline = a.search("div.five-things-headline p").text
-      article.body = a.search("div.five-things-body p").text
-      article.source = a.search("span.source").first.text.gsub("\t", "").gsub("\n", "")
+      article.headline = a.search("div.five-things-headline p").text.strip
+      article.body = a.search("div.five-things-body p").text.strip
+      article.source = a.search("span.source").first.text.gsub("\t", "").gsub("\n", "").strip
       article.save
     end
   end
