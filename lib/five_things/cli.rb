@@ -58,6 +58,32 @@ class FiveThings::CLI
     puts "------"
     puts ""
     
+    finished_reading?
+  end
+  
+  def finished_reading?
+    start = Time.now
+    puts "Type 'y' and press 'enter' when finished reading."
+   
+    @finished_reading_input = gets.strip
+
+    case @finished_reading_input
+    when 'y', 'yes'
+      finish = Time.now
+      @difference = finish - start
+      time_conversion
+      time_message
+    end
+  end
+ 
+  def time_conversion
+    time_split = (@difference/60).round(2).to_s.split(".")
+    @minutes = time_split[0]
+    @seconds = ("0.#{time_split[1]}".to_f*60).round
+  end
+ 
+  def time_message
+    puts "It took you #{@minutes} minute(s) and #{@seconds} second(s) to finish this article."
     option_message
   end
   
