@@ -1,4 +1,4 @@
-class Timer
+class FiveThings::Timer
   def start
     @start_timer = Time.now
   end

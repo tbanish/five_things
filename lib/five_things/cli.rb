@@ -58,7 +58,7 @@ class FiveThings::CLI
     puts "------"
     puts ""
     
-    @timer = Timer.new
+    @timer = FiveThings::Timer.new
     @timer.start
     finished_reading?
   end
