@@ -35,7 +35,7 @@ class FiveThings::CLI
     elsif (1..5).include?(@list_input.to_i)
       show_article
     else
-      puts "I'm not sure what you meant ..."
+      puts "I'm not sure what you meant.  Let's try that again ..."
       menu
     end
   end
@@ -72,8 +72,8 @@ class FiveThings::CLI
       puts "Come back again soon!"
       exit
     else
-      puts "I'm not sure what you meant..."
-    option_message
+      puts "I'm not sure what you meant. Let's try that again ..."
+      option_message
     end
   end
 end
