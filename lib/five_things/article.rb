@@ -7,14 +7,14 @@ class FiveThings::Article
     @@all << self
   end
   
-  def self.find_by_index(index)
-    self.all[index]
-  end
-  
   def self.all
     @@all
   end
   
+  def self.find_by_index(index)
+    self.all[index]
+  end
+
   def word_count
     @words = self.body.split.size
   end
