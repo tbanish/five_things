@@ -58,19 +58,19 @@ class FiveThings::CLI
     puts "------"
     puts ""
     
+    @start_time = Time.now
     finished_reading?
   end
   
   def finished_reading?
-    start = Time.now
     puts "Type 'y' and press 'enter' when finished reading."
    
     @finished_reading_input = gets.strip
 
     case @finished_reading_input
     when 'y', 'yes'
-      finish = Time.now
-      @difference = finish - start
+      @stop_time = Time.now
+      @difference = @stop_time - @start_time
       time_conversion
       time_message
     else
