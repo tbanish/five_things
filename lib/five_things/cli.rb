@@ -73,6 +73,9 @@ class FiveThings::CLI
       @difference = finish - start
       time_conversion
       time_message
+    else
+      puts "I'm not sure what you meant. Let's try that again ..."
+      finished_reading?
     end
   end
  
