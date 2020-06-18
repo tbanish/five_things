@@ -53,7 +53,7 @@ class FiveThings::CLI
     puts ""
     puts "#{article.body}"
     puts ""
-    puts "#{article.source}"
+    puts "Source: #{article.source}"
     puts "------"
     puts ""
     
