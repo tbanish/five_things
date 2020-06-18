@@ -36,6 +36,7 @@ class FiveThings::CLI
       show_article
     else
       puts "I'm not sure what you meant.  Let's try that again ..."
+      puts ""
       menu
     end
   end
@@ -72,6 +73,7 @@ class FiveThings::CLI
       farewell
     else
       puts "I'm not sure what you meant. Let's try that again ..."
+      puts ""
       option_message
     end
   end
