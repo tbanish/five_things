@@ -46,14 +46,14 @@ class FiveThings::CLI
   end
   
   def show_article
-    article = FiveThings::Article.find_by_index(input_to_index(@list_input))
-    puts "** #{article.headline} **"
+    @article = FiveThings::Article.find_by_index(input_to_index(@list_input))
+    puts "** #{@article.headline} **"
     puts ""
-    puts "#{article.word_count_message}"
+    puts "#{@article.word_count_message}"
     puts ""
-    puts "#{article.body}"
+    puts "#{@article.body}"
     puts ""
-    puts "Source: #{article.source}"
+    puts "Source: #{@article.source}"
     puts "------"
     puts ""
     
@@ -71,7 +71,8 @@ class FiveThings::CLI
     when 'y', 'yes'
       @timer.stop
       @timer.convert
-      @timer.results
+      puts "It took you #{@timer.minutes} minute(s) and #{@timer.seconds} second(s) to finish this article."
+      puts ""
       option_message
     else
       puts "I'm not sure what you meant. Let's try that again ..."

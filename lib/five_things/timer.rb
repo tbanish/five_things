@@ -24,9 +24,4 @@ class FiveThings::Timer
   def seconds
     @seconds
   end
-  
-  def results
-    puts "It took you #{@minutes} minute(s) and #{@seconds} second(s) to finish this article."
-    puts ""
-  end
 end
