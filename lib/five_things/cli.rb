@@ -66,14 +66,18 @@ class FiveThings::CLI
     @option_input = gets.strip
     
     case @option_input.downcase
-    when 'y'
+    when 'y', 'yes'
       menu
-    when 'n'
-      puts "Come back again soon!"
-      exit
+    when 'n', 'no'
+      farewell
     else
       puts "I'm not sure what you meant. Let's try that again ..."
       option_message
     end
+  end
+  
+  def farewell
+    puts "Come back again soon!"
+    exit
   end
 end
