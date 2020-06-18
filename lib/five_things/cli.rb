@@ -46,7 +46,6 @@ class FiveThings::CLI
   end
   
   def show_article
-    
     article = FiveThings::Article.find_by_index(input_to_index(@list_input))
     puts "** #{article.headline} **"
     puts ""
@@ -79,8 +78,6 @@ class FiveThings::CLI
       finished_reading?
     end
   end
-  
-  
   
   def option_message
     puts "Would you like to view the list of articles again? (y/n)"

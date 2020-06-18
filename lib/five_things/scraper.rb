@@ -1,5 +1,4 @@
 class FiveThings::Scraper
-  
   def scrape_articles
     site = "https://theweek.com/5things"
     doc = Nokogiri::HTML(open(site))
@@ -12,6 +11,4 @@ class FiveThings::Scraper
       article.save
     end
   end
-  
-  
 end

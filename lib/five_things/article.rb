@@ -22,5 +22,4 @@ class FiveThings::Article
   def word_count_message
     puts "Word Count: #{self.word_count}"
   end
-  
 end
