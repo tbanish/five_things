@@ -50,10 +50,17 @@ class FiveThings::CLI
     input.to_i - 1
   end
   
+  def headline_frame
+    symbol = "-"
+    symbol * @article.headline.size
+  end
+  
   def show_article
     @article = FiveThings::Article.find_by_index(input_to_index(@list_input))
     
-    puts "** #{@article.headline} **"
+    puts headline_frame
+    puts "#{@article.headline}"
+    puts headline_frame
     puts ""
     puts "Word Count: #{@article.word_count}"
     puts ""
