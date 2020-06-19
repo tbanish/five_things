@@ -71,7 +71,10 @@ class FiveThings::CLI
     when 'y', 'yes'
       @timer.stop
       @timer.convert
+      
       puts "It took you #{@timer.minutes} minute(s) and #{@timer.seconds} second(s) to finish this article."
+      puts "That means your reading speed is approximately #{@timer.reading_speed(@article.word_count)} wpm."
+      puts "Great Job!"
       puts ""
       option_message
     else
