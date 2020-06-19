@@ -41,6 +41,7 @@ class FiveThings::CLI
     else
       puts "I'm not sure what you meant.  Let's try that again ..."
       puts ""
+      sleep(2)
       menu
     end
   end
@@ -85,6 +86,8 @@ class FiveThings::CLI
       option_message
     else
       puts "I'm not sure what you meant. Let's try that again ..."
+      puts ""
+      sleep(2)
       finished_reading?
     end
   end
@@ -102,6 +105,7 @@ class FiveThings::CLI
     else
       puts "I'm not sure what you meant. Let's try that again ..."
       puts ""
+      sleep(2)
       option_message
     end
   end
