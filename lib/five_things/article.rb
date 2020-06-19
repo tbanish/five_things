@@ -18,8 +18,4 @@ class FiveThings::Article
   def word_count
     @words = self.body.split.size
   end
-  
-  def word_count_message
-    puts "Word Count: #{self.word_count}"
-  end
 end

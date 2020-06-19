@@ -50,7 +50,7 @@ class FiveThings::CLI
     
     puts "** #{@article.headline} **"
     puts ""
-    puts "#{@article.word_count_message}"
+    puts "Word Count: #{@article.word_count}"
     puts ""
     puts "#{@article.body}"
     puts ""
