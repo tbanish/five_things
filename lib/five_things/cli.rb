@@ -16,9 +16,9 @@ class FiveThings::CLI
   end
   
   def menu
-    puts "---------"
-    puts "Main Menu"
-    puts "---------"
+    puts "-----------------"
+    puts "--- Main Menu ---"
+    puts "-----------------"
     puts "Please select an item from the list below"
     puts "Type 1-5 to choose which article you would like to view"
     puts "Type 'e' to exit:"
@@ -78,6 +78,9 @@ class FiveThings::CLI
       @timer.stop
       @timer.convert
       
+      puts "---------------------"
+      puts "--- Reading Stats ---"
+      puts "---------------------"
       puts "It took you #{@timer.minutes} minute(s) and #{@timer.seconds} second(s) to finish this article."
       puts "That means your reading speed is approximately #{@timer.reading_speed(@article.word_count)} wpm."
       puts "Great Job!"
