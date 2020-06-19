@@ -72,7 +72,7 @@ class FiveThings::CLI
     
     @finished_reading_input = gets.strip
   
-    case @finished_reading_input
+    case @finished_reading_input.downcase
     when 'y', 'yes'
       @timer.stop
       @timer.convert
