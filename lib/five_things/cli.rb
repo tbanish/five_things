@@ -47,6 +47,7 @@ class FiveThings::CLI
   
   def show_article
     @article = FiveThings::Article.find_by_index(input_to_index(@list_input))
+    
     puts "** #{@article.headline} **"
     puts ""
     puts "#{@article.word_count_message}"
@@ -76,6 +77,7 @@ class FiveThings::CLI
       puts "That means your reading speed is approximately #{@timer.reading_speed(@article.word_count)} wpm."
       puts "Great Job!"
       puts ""
+      
       option_message
     else
       puts "I'm not sure what you meant. Let's try that again ..."
