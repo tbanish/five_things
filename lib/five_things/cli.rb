@@ -3,7 +3,6 @@ class FiveThings::CLI
     FiveThings::Scraper.new.scrape_articles
     greeting
     menu
-    article_list
   end
   
   def greeting
