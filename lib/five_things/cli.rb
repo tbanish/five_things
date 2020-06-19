@@ -53,7 +53,12 @@ class FiveThings::CLI
   
   def headline_frame
     symbol = "-"
-    symbol * @article.headline.size
+    
+    if @article.headline.size <= 80
+      symbol * @article.headline.size
+    else
+      symbol * 80
+    end
   end
   
   def show_article
