@@ -12,13 +12,12 @@ class FiveThings::Timer
   end
   
   def convert
-    @total_time_in_seconds = self.difference.round
-    @minutes = @total_time_in_seconds.round / 60
-    @seconds = @total_time_in_seconds.round % 60
+    @minutes = self.total_in_seconds / 60
+    @seconds = self.total_in_seconds % 60
   end
   
   def total_in_seconds
-    (self.minutes.to_f*60) + self.seconds.to_f
+    @total_time_in_seconds = self.difference
   end
   
   def reading_speed(word_count)
@@ -27,10 +26,10 @@ class FiveThings::Timer
   end
 
   def minutes
-    @minutes
+    @minutes.round
   end
 
   def seconds
-    @seconds
+    @seconds.round
   end
 end
