@@ -16,7 +16,12 @@ class FiveThings::CLI
   end
   
   def menu
-    puts "Please select an item from the list below (type 'e' to exit):"
+    puts "---------"
+    puts "Main Menu"
+    puts "---------"
+    puts "Please select an item from the list below"
+    puts "Type 1-5 to choose which article you would like to view"
+    puts "Type 'e' to exit:"
     puts ""
     article_list
   end
